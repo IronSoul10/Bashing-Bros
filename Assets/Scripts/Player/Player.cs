@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMove : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public InputActionAsset inputActions;
 
@@ -26,6 +26,7 @@ public class PlayerMove : MonoBehaviour
     private bool isJumping = false;
     private bool sprintActive;
     float currentSpeed;
+    [HideInInspector] public bool pressed;
 
     private void OnEnable()
     {
@@ -48,7 +49,6 @@ public class PlayerMove : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
-
     private void Update()
     {
         movePlayer = m_moveAction.ReadValue<Vector2>();
@@ -105,8 +105,15 @@ public class PlayerMove : MonoBehaviour
 
     public void Sprint()
     {
+
         sprintActive = isWalking && m_sprintAction.IsPressed();
         currentSpeed = sprintActive ? speedRun : speedWalk;
+    }
+
+    public bool Interact()
+    {
+        pressed = m_interactAction.WasPressedThisFrame();
+        return pressed;
     }
 
 }

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5266531917046067687}
   - component: {fileID: 7290855248709141558}
   - component: {fileID: 2495685440610811797}
-  - component: {fileID: 7570724597658475656}
   - component: {fileID: 5658993780980155023}
   - component: {fileID: 1758002632916892428}
   - component: {fileID: 1833123235489256837}
+  - component: {fileID: 8338118516473859062}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -139,21 +139,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7570724597658475656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5718504998781343216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14aa04df98d919541ad1124a6ad00c5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  speed: 5
-  jumpForce: 5
 --- !u!54 &5658993780980155023
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -221,3 +206,20 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &8338118516473859062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5718504998781343216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcea3358d5522bc418fdc8965b8b250a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  speedWalk: 5
+  speedRun: 10
+  jumpForce: 5
+  pressed: 0
