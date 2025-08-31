@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
 
 
     Vector2 movePlayer;
-    Vector2 lookPlayer;
 
     private Animator animator;
     private Rigidbody rb;
@@ -52,7 +51,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         movePlayer = m_moveAction.ReadValue<Vector2>();
-        lookPlayer = m_lookAction.ReadValue<Vector2>();
 
         if (m_jumpAction.WasPressedThisFrame() && !isJumping)
         {
@@ -70,7 +68,7 @@ public class Player : MonoBehaviour
 
         isJumping = true;
         rb.AddForceAtPosition(new Vector3(0, jumpForce, 0), Vector3.up, ForceMode.Impulse);
-        animator.SetTrigger("IsJump");
+       // animator.SetTrigger("IsJump");
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -90,7 +88,7 @@ public class Player : MonoBehaviour
 
         rb.MovePosition(rb.position + currentSpeed * Time.deltaTime * moveDirection);
 
-        animator.SetBool("IsRun", isWalking);
+      //  animator.SetBool("IsRun", isWalking);
 
         // Cambiar la escala en el eje X según la dirección del movimiento
         if (isWalking)
